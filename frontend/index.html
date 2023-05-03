@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaScore</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">IdeaScore</h1>
+        <form id="question-form" class="mt-5">
+            <div id="step-1" class="form-group">
+                <label>Step 1: What problem does your idea solve?</label>
+                <small class="form-text text-muted">Is this a real problem that people are actively seeking solutions for, or is it a problem that people don't know they have?</small>
+                <textarea class="form-control" rows="3"></textarea>
+                
+            </div>
+            <div id="step-2" class="form-group">
+                <label>Step 2: Who is your target customer?</label>
+                <small class="form-text text-muted">How big is the market and what is the competition like?</small>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div id="step-3" class="form-group">
+                <label>Step 3: How does your idea differentiate itself from existing solutions on the market?</label>
+                <small class="form-text text-muted">Why would customers choose your solution over others?</small>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div id="step-4" class="form-group">
+                <label>Step 4: How much will it cost to develop your idea and bring it to market?</label>
+                <small class="form-text text-muted">What are the potential revenue streams and profit margins?</small>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div id="step-5" class="form-group">
+                <label>Step 5: What are the potential risks and challenges associated with your idea?</label>
+                <small class="form-text text-muted">What are the worst-case scenarios and how will you mitigate them?</small>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+        </form>
+        <button id="back" type="button" class="btn btn-secondary d-none">Back</button>
+        <button id="next" type="button" class="btn btn-primary">Next</button>
+        <button id="submit" type="button" class="btn btn-success d-none">Submit</button>
+        
+        
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
