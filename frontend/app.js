@@ -49,14 +49,15 @@ $(document).ready(function () {
             })
             .get()
             .join("\n\n");
-    
+
         try {
             // Send userInput to your server-side API
             const response = await axios.post('/api/ask', { userInput });
-    
+
             // Display the generated answer
             const answer = response.data.answer;
-            alert(`Generated answer: ${answer}`);
+          //alert(`Generated answer: ${answer}`);
+          $('#response_message').append(`Generated answer: ${answer}`)
         } catch (error) {
             console.error(error);
             alert('Error communicating with the server');
