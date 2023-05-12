@@ -20,15 +20,13 @@ app.post('/api/ask', async (req, res) => {
     const userInput = req.body.userInput;
 
     // Replace with your OpenAI API key
-    const OPENAI_API_KEY = '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';
+    const OPENAI_API_KEY = 'Api key';
 
     try {
-        const response = await axios.post('https://api.openai.com/v1/engines/davinci-codex/completions', {
-            prompt: userInput,
-            max_tokens: 50, // You can adjust this according to your needs
-            n: 1,
-            stop: null,
-            temperature: 0.5,
+        const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+                "model": "gpt-3.5-turbo",
+                "messages": [{"role": "user", "content": "Hello!"}]
+            
         }, {
             headers: {
                 'Authorization': `Bearer ${OPENAI_API_KEY}`,
@@ -38,12 +36,22 @@ app.post('/api/ask', async (req, res) => {
 
         const generatedAnswer = response.data.choices[0].text.trim();
         res.json({ answer: generatedAnswer });
-    } catch (error) {
-        console.error('Error while processing request:', error); // Add this line
+    } 
+    catch (error) {
+        console.error('Error while processing request:', error.response ? error.response.data : error);
         res.status(500).json({ error: 'Error communicating with OpenAI API' });
     }
+    
 });
 
+app.get('/hello', async (req, res) => {
+    console.log('hello', req.body); // Add this line
+
+        
+        res.json({ answer: 'hello'});
+    
+    
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
